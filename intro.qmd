@@ -1,0 +1,21 @@
+---
+title: "About git/github"
+---
+
+# Version control
+
+"Version control is the software engineering practice of controlling, organizing, and tracking different versions in history of computer files – primarily source code text files, but generally any type of file. (...) Version control includes options to view **old versions** and to **revert** a file to a previous version" ([Wikipedia, 2026 Jan](https://en.wikipedia.org/wiki/Version_control)).
+
+Why this is so important? Because it can solve (or mitigate) several common problems when coding, for instance: overwriting a script or pipeline, needing to go back to a previous version, collaborating with others, tracking who what and when changes.
+
+After this tutorial you will see that version control is much more effective than:
+
+-   Manual copies: document_v1.txt, document_v2_final.txt, document_v2_final_really.txt
+-   Commenting out code: leaving old code "just in case"
+-   Physical notebooks
+-   Shared network drives: the infamous "Final_FINAL.zip"
+
+Initially version control was addressed as a client-server approach (centralized), however the distributed version control systems are much flexible and it follows a peer-to-peer approach. That is, "the complete codebase, including its full history, is mirrored on every developer's computer. Compared to centralized version control, this enables automatic management branching and merging, speeds up most operations (except pushing and fetching), improves the ability to work offline, and does not rely on a single location for backups. Git, the world's most popular version control system, is a distributed version control system" ([Wikipedia, 2026 Jan](https://en.wikipedia.org/wiki/Distributed_version_control)).
+
+# Git
+

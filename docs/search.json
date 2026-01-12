@@ -40,5 +40,12 @@
     "title": "gitgitgithub",
     "section": "",
     "text": "This tutorial will help you master GitHub for data science projects.\n\n\n\nGitHub basics\nRepository management\nCollaboration workflows\nGitHub Pages deployment"
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "About git/github",
+    "section": "",
+    "text": "Version control\n“Version control is the software engineering practice of controlling, organizing, and tracking different versions in history of computer files – primarily source code text files, but generally any type of file. (…) Version control includes options to view old versions and to revert a file to a previous version” (Wikipedia, 2026 Jan).\nWhy this is so important? Because it can solve (or mitigate) several common problems when coding, for instance: overwriting a script or pipeline, needing to go back to a previous version, collaborating with others, tracking who what and when changes.\nAfter this tutorial you will see that version control is much more effective than:\n\nManual copies: document_v1.txt, document_v2_final.txt, document_v2_final_really.txt\nCommenting out code: leaving old code “just in case”\nPhysical notebooks\nShared network drives: the infamous “Final_FINAL.zip”\n\nInitially version control was addressed as a client-server approach (centralized), however the distributed version control systems are much flexible and it follows a peer-to-peer approach. That is, “the complete codebase, including its full history, is mirrored on every developer’s computer. Compared to centralized version control, this enables automatic management branching and merging, speeds up most operations (except pushing and fetching), improves the ability to work offline, and does not rely on a single location for backups. Git, the world’s most popular version control system, is a distributed version control system” (Wikipedia, 2026 Jan).\n\n\nGit"
   }
 ]
