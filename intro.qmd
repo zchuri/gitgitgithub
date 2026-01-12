@@ -4,7 +4,7 @@ title: "About git/github"
 
 # Version control
 
-"Version control is the software engineering practice of controlling, organizing, and tracking different versions in history of computer files – primarily source code text files, but generally any type of file. (...) Version control includes options to view **old versions** and to **revert** a file to a previous version" ([Wikipedia, 2026 Jan](https://en.wikipedia.org/wiki/Version_control)).
+"Version control is the software engineering practice of controlling, organizing, and tracking different versions in history of computer files – primarily source code text files, but generally any type of file. (...) Version control includes options to view **old versions** and to **revert** a file to a previous version." ([Wikipedia, 2026 Jan](https://en.wikipedia.org/wiki/Version_control))
 
 Why this is so important? Because it can solve (or mitigate) several common problems when coding, for instance: overwriting a script or pipeline, needing to go back to a previous version, collaborating with others, tracking who what and when changes.
 
@@ -15,7 +15,32 @@ After this tutorial you will see that version control is much more effective tha
 -   Physical notebooks
 -   Shared network drives: the infamous "Final_FINAL.zip"
 
-Initially version control was addressed as a client-server approach (centralized), however the distributed version control systems are much flexible and it follows a peer-to-peer approach. That is, "the complete codebase, including its full history, is mirrored on every developer's computer. Compared to centralized version control, this enables automatic management branching and merging, speeds up most operations (except pushing and fetching), improves the ability to work offline, and does not rely on a single location for backups. Git, the world's most popular version control system, is a distributed version control system" ([Wikipedia, 2026 Jan](https://en.wikipedia.org/wiki/Distributed_version_control)).
+Initially version control was addressed as a client-server approach (centralized), however the distributed version control systems are much flexible and it follows a peer-to-peer approach. That is, "the complete codebase, including its full history, is mirrored on every developer's computer. Compared to centralized version control, this enables automatic management branching and merging, speeds up most operations (except pushing and fetching), improves the ability to work offline, and does not rely on a single location for backups. Git, the world's most popular version control system, is a distributed version control system." ([Wikipedia, 2026 Jan](https://en.wikipedia.org/wiki/Distributed_version_control))
 
 # Git
 
+It was initially developed by Linus Torvalds after the free license for BitKeeper was revoked for Linux. Git aims:
+
+- speed
+- data integrity
+- non-linear workflows (e.g., parallel branches running on different computers)
+
+"Git maintains a local copy of the entire repository, also known as the **repo**, with history and version-tracking abilities, independent of network access or a central server. A repository is stored on each computer in a standard directory with additional, hidden files to provide version control capabilities. Git provides features to synchronize changes between repositories that share history; for asynchronous collaboration, this extends to repositories on remote machines. Although all repositories (with the same history) are peers, developers often use a central server to host a repository to hold an integrated copy." ([Wikipedia, 2026 Jan](https://en.wikipedia.org/wiki/Git))
+
+# GitHub
+
+Key features:
+
+-   Fork & Pull Request model: Lowered barrier to contribution
+-   Web-based interface: Made Git accessible
+-   Social features: Stars, followers, trending repos
+-   Issue tracking & Wikis: All-in-one project management
+-   GitHub Pages: Free hosting for documentation/projects
+
+The impact:
+
+-    2008: GitHub launches
+-    2012: 2.1 million repositories
+-    2015: 10 million repositories
+-    2018: Microsoft acquires GitHub for $7.5B
+-    Today: 100+ million developers, 420+ million repositories
