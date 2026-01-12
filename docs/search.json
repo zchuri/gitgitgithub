@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "tutorial.html",
+    "href": "tutorial.html",
+    "title": "Git/GitHub Tutorial",
+    "section": "",
+    "text": "Go to github.com\nSign up for free"
+  },
+  {
+    "objectID": "tutorial.html#getting-started-with-github",
+    "href": "tutorial.html#getting-started-with-github",
+    "title": "Git/GitHub Tutorial",
+    "section": "",
+    "text": "Go to github.com\nSign up for free"
+  },
+  {
+    "objectID": "tutorial.html#prepare-for-github",
+    "href": "tutorial.html#prepare-for-github",
+    "title": "Git/GitHub Tutorial",
+    "section": "3. Prepare for GitHub",
+    "text": "3. Prepare for GitHub\n\nCreate .gitignore file:"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "gitgitgithub",
+    "section": "",
+    "text": "This tutorial will help you master GitHub for data science projects.\n\n\n\nGitHub basics\nRepository management\nCollaboration workflows\nGitHub Pages deployment"
+  },
+  {
+    "objectID": "index.html#learn-github-with-quarto",
+    "href": "index.html#learn-github-with-quarto",
+    "title": "gitgitgithub",
+    "section": "",
+    "text": "This tutorial will help you master GitHub for data science projects.\n\n\n\nGitHub basics\nRepository management\nCollaboration workflows\nGitHub Pages deployment"
+  }
+]

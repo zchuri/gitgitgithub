@@ -1,0 +1,14 @@
+---
+title: "gitgitgithub"
+---
+
+## Learn GitHub with Quarto
+
+This tutorial will help you master GitHub for data science projects.
+
+### What you'll learn:
+
+-   GitHub basics
+-   Repository management
+-   Collaboration workflows
+-   GitHub Pages deployment
