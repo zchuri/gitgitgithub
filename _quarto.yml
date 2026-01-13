@@ -10,6 +10,8 @@ website:
         text: Home
       - href: intro.qmd
         text: Intro
+      - href: github.qmd
+        text: GitHub
       - href: tutorial.qmd
         text: Tutorial
       - href: about.qmd

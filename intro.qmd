@@ -19,23 +19,28 @@ Initially version control was addressed as a client-server approach (centralized
 
 # Git
 
+[![](images/Git-logo.svg){.float-left width="30%"}](https://en.wikipedia.org/wiki/Git)
+
 It was initially developed by Linus Torvalds after the free license for BitKeeper was revoked for Linux. Git aims:
 
 - speed
 - data integrity
 - non-linear workflows (e.g., parallel branches running on different computers)
 
+
+
 "Git maintains a local copy of the entire repository, also known as the **repo**, with history and version-tracking abilities, independent of network access or a central server. A repository is stored on each computer in a standard directory with additional, hidden files to provide version control capabilities. Git provides features to synchronize changes between repositories that share history; for asynchronous collaboration, this extends to repositories on remote machines. Although all repositories (with the same history) are peers, developers often use a central server to host a repository to hold an integrated copy." ([Wikipedia, 2026 Jan](https://en.wikipedia.org/wiki/Git))
 
 # GitHub
+[![](images/GitHub_Invertocat_Logo.svg){.float-left width="30%"}](https://en.wikipedia.org/wiki/GitHub)
 
-Key features:
+Git has some limitations to collaborate online. For example: repos' maintainers receive contributions (patches) mainly through email, merging depends on the maintainers, limited permission management, etc. Github is a software development platform that sits on top of Git, adding new features, such as: 
 
--   Fork & Pull Request model: Lowered barrier to contribution
--   Web-based interface: Made Git accessible
--   Social features: Stars, followers, trending repos
--   Issue tracking & Wikis: All-in-one project management
--   GitHub Pages: Free hosting for documentation/projects
+-   Fork & Pull Request model: lowered barrier to contribution
+-   Web-based interface: made Git accessible
+-   Social features: stars, followers, trending repos
+-   Issue tracking & Wikis: all-in-one project management
+-   GitHub Pages: free hosting for documentation/projects
 
 The impact:
 
@@ -44,3 +49,4 @@ The impact:
 -    2015: 10 million repositories
 -    2018: Microsoft acquires GitHub for $7.5B
 -    Today: 100+ million developers, 420+ million repositories
+

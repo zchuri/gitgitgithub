@@ -1,0 +1,26 @@
+---
+title: "GitHub"
+---
+
+## Getting Started with GitHub
+
+Although Git precedes GitHub, it may be more useful to start with GitHub because is more user-friendly for beginners. 
+
+### 1. Create a GitHub Account
+
+First of all, you will need a github account.
+
+-   Go to [github.com](https://github.com)
+-   Sign up for free
+
+For academic purposes, GitHub offers additional features (https://github.com/education).
+
+Explore the dashboard and your github.com/yourusername site. Explore also the site of someone else.
+
+### 2. Create a new repository
+
+Relevant features to take into account:
+
+- Name: incompatibilities... but names are very [important](https://r-pkgs.org/workflow101.html)
+- Description/README
+
