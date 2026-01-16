@@ -19,8 +19,21 @@ Explore the dashboard and your github.com/yourusername site. Explore also the si
 
 ### 2. Create a new repository
 
-Relevant features to take into account:
+This is an empty repository:
+
+![](images/newrepo.png){width=100%}
+Nevertheless, I suggest you to add some features from the begining. Relevant features to take into account:
 
 - Name: incompatibilities... but names are very [important](https://r-pkgs.org/workflow101.html)
 - Description/README
+- Licence: depending on the context it may be really important.
+  - <https://choosealicense.com/>
+  - <https://choosealicense.com/appendix/>
+
+### 3. Add new folders/files
+
+Let's add a bit of code:
+
+- <https://r4ds.had.co.nz/>
+- <https://github.com/BrainMapINB>
 
