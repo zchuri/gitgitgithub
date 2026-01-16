@@ -6,6 +6,8 @@ title: "gitgitgithub"
 
 This tutorial will help you master GitHub for data science projects.
 
+Mini-survey: <https://forms.gle/VU6QLeoZqefbybKk6>
+
 ### What you'll learn:
 
 -   GitHub basics
