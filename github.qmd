@@ -21,7 +21,7 @@ Explore the dashboard and your github.com/yourusername site. Explore also the si
 
 This is an empty repository:
 
-![](images/newrepo.png){width=100%}
+![](images/newrepo.png){width=100%}<br><br>
 Nevertheless, I suggest you to add some features from the begining. Relevant features to take into account:
 
 - Name: incompatibilities... but names are very [important](https://r-pkgs.org/workflow101.html)
@@ -32,8 +32,30 @@ Nevertheless, I suggest you to add some features from the begining. Relevant fea
 
 ### 3. Add new folders/files
 
-Let's add a bit of code:
+Let's add a bit of code:<br>
+<https://r4ds.had.co.nz/><br>
+<https://github.com/BrainMapINB><br>
 
-- <https://r4ds.had.co.nz/>
-- <https://github.com/BrainMapINB>
+- Upload it through the repo's uploader.
+- Always follow this basic steps: add -> commit -> push
+- Check the commit.
+
+![](images/github-upload.png){width=100%}<br><br>
+
+- Add new code to that file. And upload again. Check the commit info.
+- Edit some code in that file. And upload again. Check the commit info. Tip: <https://r-graph-gallery.com>
+- You may also check the history of the "main". You may view the entire previous version through the "...View file" option.
+- Another option would be to create a new branch based on a previous commit. Branches aim alternative or experimental pathways.
+
+<center>
+![](images/mainbranch.png)<br>
+<span style="font-size: 50%;">Source: https://pdh11.blogspot.com/2013/09/a-git-workflow-at-ei.html</span>
+</center><br><br>
+
+
+- Merging a branch into the main branch is possible through "Compare & pull request". Rebasing instead of merging, will imply discarding the changes added into the main branch after the aforementioned branch.
+
+![](images/github-merge.png){width=100%}<br><br>
+
+In general, the GitHub web interface face many limitations and it is very inefficient when considering multiple files. Let's move to integrate the repository with Git commands.
 

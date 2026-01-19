@@ -32,14 +32,14 @@
     "href": "index.html",
     "title": "gitgitgithub",
     "section": "",
-    "text": "This tutorial will help you master GitHub for data science projects.\nMini-survey: https://forms.gle/VU6QLeoZqefbybKk6\n\n\n\nGitHub basics\nRepository management\nCollaboration workflows\nGitHub Pages deployment"
+    "text": "This tutorial will help you master GitHub for data science projects.\nMini-survey: https://forms.gle/VU6QLeoZqefbybKk6\n\n\n\nGit basics\nGitHub’s repositories management\nCollaboration workflows"
   },
   {
     "objectID": "index.html#learn-github-with-quarto",
     "href": "index.html#learn-github-with-quarto",
     "title": "gitgitgithub",
     "section": "",
-    "text": "This tutorial will help you master GitHub for data science projects.\nMini-survey: https://forms.gle/VU6QLeoZqefbybKk6\n\n\n\nGitHub basics\nRepository management\nCollaboration workflows\nGitHub Pages deployment"
+    "text": "This tutorial will help you master GitHub for data science projects.\nMini-survey: https://forms.gle/VU6QLeoZqefbybKk6\n\n\n\nGit basics\nGitHub’s repositories management\nCollaboration workflows"
   },
   {
     "objectID": "intro.html",
@@ -53,14 +53,14 @@
     "href": "github.html",
     "title": "GitHub",
     "section": "",
-    "text": "Although Git precedes GitHub, it may be more useful to start with GitHub because is more user-friendly for beginners.\n\n\nFirst of all, you will need a github account.\n\nGo to github.com\nSign up for free\n\nFor academic purposes, GitHub offers additional features (https://github.com/education).\nExplore the dashboard and your github.com/yourusername site. Explore also the site of someone else.\n\n\n\nThis is an empty repository:\n Nevertheless, I suggest you to add some features from the begining. Relevant features to take into account:\n\nName: incompatibilities… but names are very important\nDescription/README\nLicence: depending on the context it may be really important.\n\nhttps://choosealicense.com/\nhttps://choosealicense.com/appendix/\n\n\n\n\n\nLet’s add a bit of code:\n\nhttps://r4ds.had.co.nz/\nhttps://github.com/BrainMapINB"
+    "text": "Although Git precedes GitHub, it may be more useful to start with GitHub because is more user-friendly for beginners.\n\n\nFirst of all, you will need a github account.\n\nGo to github.com\nSign up for free\n\nFor academic purposes, GitHub offers additional features (https://github.com/education).\nExplore the dashboard and your github.com/yourusername site. Explore also the site of someone else.\n\n\n\nThis is an empty repository:\n Nevertheless, I suggest you to add some features from the begining. Relevant features to take into account:\n\nName: incompatibilities… but names are very important\nDescription/README\nLicence: depending on the context it may be really important.\n\nhttps://choosealicense.com/\nhttps://choosealicense.com/appendix/\n\n\n\n\n\nLet’s add a bit of code: https://r4ds.had.co.nz/ https://github.com/BrainMapINB\n\nUpload it through the repo’s uploader.\nAlways follow this basic steps: add -&gt; commit -&gt; push\nCheck the commit.\n\n\n\nAdd new code to that file. And upload again. Check the commit info.\nEdit some code in that file. And upload again. Check the commit info. Tip: https://r-graph-gallery.com\nYou may also check the history of the “main”. You may view the entire previous version through the “…View file” option.\nAnother option would be to create a new branch based on a previous commit. Branches aim alternative or experimental pathways.\n\n\n Source: https://pdh11.blogspot.com/2013/09/a-git-workflow-at-ei.html\n\n\n\nMerging a branch into the main branch is possible through “Compare & pull request”. Rebasing instead of merging, will imply discarding the changes added into the main branch after the aforementioned branch.\n\n\nIn general, the GitHub web interface face many limitations and it is very inefficient when considering multiple files. Let’s move to integrate the repository with Git commands."
   },
   {
     "objectID": "github.html#getting-started-with-github",
     "href": "github.html#getting-started-with-github",
     "title": "GitHub",
     "section": "",
-    "text": "Although Git precedes GitHub, it may be more useful to start with GitHub because is more user-friendly for beginners.\n\n\nFirst of all, you will need a github account.\n\nGo to github.com\nSign up for free\n\nFor academic purposes, GitHub offers additional features (https://github.com/education).\nExplore the dashboard and your github.com/yourusername site. Explore also the site of someone else.\n\n\n\nThis is an empty repository:\n Nevertheless, I suggest you to add some features from the begining. Relevant features to take into account:\n\nName: incompatibilities… but names are very important\nDescription/README\nLicence: depending on the context it may be really important.\n\nhttps://choosealicense.com/\nhttps://choosealicense.com/appendix/\n\n\n\n\n\nLet’s add a bit of code:\n\nhttps://r4ds.had.co.nz/\nhttps://github.com/BrainMapINB"
+    "text": "Although Git precedes GitHub, it may be more useful to start with GitHub because is more user-friendly for beginners.\n\n\nFirst of all, you will need a github account.\n\nGo to github.com\nSign up for free\n\nFor academic purposes, GitHub offers additional features (https://github.com/education).\nExplore the dashboard and your github.com/yourusername site. Explore also the site of someone else.\n\n\n\nThis is an empty repository:\n Nevertheless, I suggest you to add some features from the begining. Relevant features to take into account:\n\nName: incompatibilities… but names are very important\nDescription/README\nLicence: depending on the context it may be really important.\n\nhttps://choosealicense.com/\nhttps://choosealicense.com/appendix/\n\n\n\n\n\nLet’s add a bit of code: https://r4ds.had.co.nz/ https://github.com/BrainMapINB\n\nUpload it through the repo’s uploader.\nAlways follow this basic steps: add -&gt; commit -&gt; push\nCheck the commit.\n\n\n\nAdd new code to that file. And upload again. Check the commit info.\nEdit some code in that file. And upload again. Check the commit info. Tip: https://r-graph-gallery.com\nYou may also check the history of the “main”. You may view the entire previous version through the “…View file” option.\nAnother option would be to create a new branch based on a previous commit. Branches aim alternative or experimental pathways.\n\n\n Source: https://pdh11.blogspot.com/2013/09/a-git-workflow-at-ei.html\n\n\n\nMerging a branch into the main branch is possible through “Compare & pull request”. Rebasing instead of merging, will imply discarding the changes added into the main branch after the aforementioned branch.\n\n\nIn general, the GitHub web interface face many limitations and it is very inefficient when considering multiple files. Let’s move to integrate the repository with Git commands."
   },
   {
     "objectID": "github.html#prepare-for-github",
@@ -68,5 +68,12 @@
     "title": "GitHub",
     "section": "3. Prepare for GitHub",
     "text": "3. Prepare for GitHub\n\nCreate .gitignore file:"
+  },
+  {
+    "objectID": "index.html#scientific-context",
+    "href": "index.html#scientific-context",
+    "title": "gitgitgithub",
+    "section": "Scientific context",
+    "text": "Scientific context\n\nSquare one: “Hackaton” https://doi.org/10.1186/s13742-016-0121-x\nR package: https://doi.org/10.32614/CRAN.package.NBR https://doi.org/10.7554/eLife.55081\nAnother academic “hackaton”: https://neurohackademy.org/\n\nGreat overview: https://neurohackademy.org/course/from-interactive-exploration-to-reproducible-data-science-jupyter-binder-travis-and-friends-2/\nNice example with great tips: https://neurohackademy.org/course/tbd-4/"
   }
 ]

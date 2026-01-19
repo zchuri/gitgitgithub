@@ -10,7 +10,23 @@ Mini-survey: <https://forms.gle/VU6QLeoZqefbybKk6>
 
 ### What you'll learn:
 
--   GitHub basics
--   Repository management
+-   Git basics
+-   GitHub's repositories management
 -   Collaboration workflows
--   GitHub Pages deployment
+
+## Scientific context
+
+- Square one: "Hackaton"<br>
+<https://doi.org/10.1186/s13742-016-0121-x>
+
+- R package:<br>
+<https://doi.org/10.32614/CRAN.package.NBR><br>
+<https://doi.org/10.7554/eLife.55081>
+
+- Another academic "hackaton":
+<https://neurohackademy.org/>
+
+  - Great overview:<br> <https://neurohackademy.org/course/from-interactive-exploration-to-reproducible-data-science-jupyter-binder-travis-and-friends-2/>
+  - Nice example with great tips:<br> <https://neurohackademy.org/course/tbd-4/>
+
+![](images/opensci.png){width=100%}
