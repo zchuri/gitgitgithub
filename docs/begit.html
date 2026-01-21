@@ -171,6 +171,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#first-of-all-get-git" id="toc-first-of-all-get-git" class="nav-link active" data-scroll-target="#first-of-all-get-git">First of all: get Git!</a></li>
+  <li><a href="#first-commands" id="toc-first-commands" class="nav-link" data-scroll-target="#first-commands">First commands:</a></li>
+  <li><a href="#commit-arise" id="toc-commit-arise" class="nav-link" data-scroll-target="#commit-arise">Commit arise</a></li>
+  <li><a href="#navigate-between-versions" id="toc-navigate-between-versions" class="nav-link" data-scroll-target="#navigate-between-versions">Navigate between versions</a></li>
   </ul>
 </nav>
     </div>
@@ -215,14 +218,108 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="first-of-all-get-git" class="level2">
 <h2 class="anchored" data-anchor-id="first-of-all-get-git">First of all: get Git!</h2>
 <ul>
-<li>OS: https://git-scm.com/install/</li>
+<li>OS: <a href="https://git-scm.com/install/" class="uri">https://git-scm.com/install/</a></li>
 <li>Initial config:</li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Your name"</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"your@email"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Tip: you may use your private GitHub email.</p>
-<p>Wait a minute… it’s your first time using Bash… are you panicking?… don’t worry, it’s quite usual… here some tips:<br> <a href="https://linuxconfig.org/bash-scripting-tutorial-for-beginners" class="uri">https://linuxconfig.org/bash-scripting-tutorial-for-beginners</a><br> <a href="https://www.geeksforgeeks.org/linux-unix/bash-scripting-introduction-to-bash-and-bash-scripting/" class="uri">https://www.geeksforgeeks.org/linux-unix/bash-scripting-introduction-to-bash-and-bash-scripting/</a></p>
-<p>First commands: git clone https://github.com/zchuri/ejemplo123.git git log git branch new-branch-name git checkout new-branch-name # switch between branches git checkout main git pull origin main # origin stands for the remote server git merge git push</p>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"your@email"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> credential.helper store</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Tip: you may use your GitHub’s no-reply email (recommended for privacy).</p>
+<p>Wait a minute… it’s your first time using Bash… are you panicking?… don’t worry, it’s quite usual… here some tips:<br> <a href="https://linuxconfig.org/bash-scripting-tutorial-for-beginners" class="uri">https://linuxconfig.org/bash-scripting-tutorial-for-beginners</a><br> <a href="https://www.geeksforgeeks.org/linux-unix/bash-scripting-introduction-to-bash-and-bash-scripting/" class="uri">https://www.geeksforgeeks.org/linux-unix/bash-scripting-introduction-to-bash-and-bash-scripting/</a><br> Super tip: the tabulator is going to became a good friend!</p>
+</section>
+<section id="first-commands" class="level2">
+<h2 class="anchored" data-anchor-id="first-commands">First commands:</h2>
+<p>Change directory with <code>cd</code> then:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Local copy from the server's directory</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/zchuri/ejemplo123.git</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Move into that directory</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ejemplo123/</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the status</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>On branch main
+Your branch is up to date with 'origin/main'.</code></pre>
+<p>Make a small change. Then:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the status</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+    example text.txt
+
+nothing added to commit but untracked files present (use "git add" to track)</code></pre>
+<p>Untracked changes, then use <code>git add file1 file2 file3</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add file</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="st">'example text.txt'</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#git add file.txt          # Add specific file</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#git add .                 # Add all changes</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the status</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged &lt;file&gt;..." to unstage)
+    new file:   example text.txt</code></pre>
+</section>
+<section id="commit-arise" class="level2">
+<h2 class="anchored" data-anchor-id="commit-arise">Commit arise</h2>
+<p>A <code>git commit</code> is a permanent, versioned <em>snapshot</em> of a project’s entire codebase at a specific point in time, accompanied by metadata including the author’s identity (who), timestamp (when), and a descriptive message (what/why) documenting the changes made.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Commit</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Adding example text file"</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Commit without -m (opens editor)</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># git commit --amend -m "Better message"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>[main 04cdef8] Adding example text file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 example text.txt</code></pre>
+<p>Commit anatomy:</p>
+<pre><code>[Commit Hash: a1b2c3d]
+├── Author: Your Name &lt;email@example.com&gt;
+├── Date:   Thu Jan 1 12:00:00 2024
+├── Message: "Add user login functionality"
+└── Snapshot: All files at that moment</code></pre>
+<p>Some suggestions for clear/efficient messages:</p>
+<pre><code>feat: Add user authentication
+fix: Resolve login page crash
+docs: Update installation instructions
+style: Format code with prettier
+refactor: Simplify data processing
+test: Add unit tests for API</code></pre>
+<p>Some warnings about not clear messages:</p>
+<pre><code>fix
+stuff
+updated
+blablabla</code></pre>
+<p>You may be tired, you may be bored, you may be distracted when writting the messages… but keep in mind who’s going to read that message (including your future you).</p>
+<p>Overview:</p>
+<pre><code># Working Directory      Staging Area          Commit
+# (untracked/modified)   (git add)            (git commit)
+┌─────────────────┐     ┌────────────┐     ┌────────────┐
+│ file1.txt       │────▶│ file1.txt  │────▶│ SNAPSHOT   │
+│ file2.txt       │     │            │     │ of staged  │
+│ file3.txt       │     │            │     │ files      │
+└─────────────────┘     └────────────┘     └────────────┘</code></pre>
+<p>How to see commits:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Commit history</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log                 <span class="co"># Full history</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--oneline</span>       <span class="co"># Compact view</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--graph</span>         <span class="co"># Visual branch history</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">-p</span>              <span class="co"># Show changes in each commit</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Specific commits</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> show 04cdef8        <span class="co"># Specific commit</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> show 8ea90d3        <span class="co"># Specific commit</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="navigate-between-versions" class="level2">
+<h2 class="anchored" data-anchor-id="navigate-between-versions">Navigate between versions</h2>
+<p>The <code>git checkout</code> command enables navigation between different states within a Git repository, allowing developers to switch between branches, restore files from previous commits, or temporarily examine historical versions of the codebase without altering the current working state. This command serves as the primary mechanism for traversing the multidimensional timeline of a project’s development history.</p>
+<p>git status On branch main Your branch is ahead of ‘origin/main’ by 1 commit. (use “git push” to publish your local commits)</p>
+<p>nothing to commit, working tree clean</p>
+<p>git log git branch new-branch-name git checkout new-branch-name # switch between branches git checkout main git pull origin main # origin stands for the remote server git merge git push</p>
 
 
 </section>

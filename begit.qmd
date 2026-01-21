@@ -21,7 +21,7 @@ The git directory serves as the database where the project’s complete history 
 
 ## First of all: get Git!
 
-- OS: https://git-scm.com/install/
+- OS: <https://git-scm.com/install/>
 - Initial config:
 
 ```bash
@@ -33,10 +33,160 @@ Tip: you may use your GitHub's no-reply email (recommended for privacy).
 
 Wait a minute... it's your first time using Bash... are you panicking?... don't worry, it's quite usual... here some tips:<br>
 <https://linuxconfig.org/bash-scripting-tutorial-for-beginners><br>
-<https://www.geeksforgeeks.org/linux-unix/bash-scripting-introduction-to-bash-and-bash-scripting/>
+<https://www.geeksforgeeks.org/linux-unix/bash-scripting-introduction-to-bash-and-bash-scripting/><br>
+Super tip: the tabulator is going to became a good friend!
 
-First commands:
+## First commands:
+
+Change directory with `cd` then:
+
+```bash
+# Local copy from the server's directory
 git clone https://github.com/zchuri/ejemplo123.git
+# Move into that directory
+cd ejemplo123/
+# Check the status
+git status
+```
+
+```
+On branch main
+Your branch is up to date with 'origin/main'.
+```
+
+
+Make a small change. Then:
+
+```bash
+# Check the status
+git status
+```
+
+``` 
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	example text.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+Untracked changes, then use `git add file1 file2 file3`:
+
+```bash
+# Add file
+git add 'example text.txt'
+
+#git add file.txt          # Add specific file
+#git add .                 # Add all changes
+
+# Check the status
+git status
+```
+
+```
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   example text.txt
+```
+
+## Commit arise
+
+A `git commit` is a permanent, versioned *snapshot* of a project's entire codebase at a specific point in time, accompanied by metadata including the author's identity (who), timestamp (when), and a descriptive message (what/why) documenting the changes made.
+
+```bash
+# Commit
+git commit -m "Adding example text file"
+
+# Commit without -m (opens editor)
+# git commit --amend -m "Better message"
+
+```
+
+``` 
+[main 04cdef8] Adding example text file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 example text.txt
+```
+
+
+Commit anatomy:
+
+```
+[Commit Hash: a1b2c3d]
+├── Author: Your Name <email@example.com>
+├── Date:   Thu Jan 1 12:00:00 2024
+├── Message: "Add user login functionality"
+└── Snapshot: All files at that moment
+```
+
+Some suggestions for clear/efficient messages:
+
+```
+feat: Add user authentication
+fix: Resolve login page crash
+docs: Update installation instructions
+style: Format code with prettier
+refactor: Simplify data processing
+test: Add unit tests for API
+```
+
+Some warnings about not clear messages:
+
+```
+fix
+stuff
+updated
+blablabla
+```
+
+You may be tired, you may be bored, you may be distracted when writting the messages... but keep in mind who's going to read that message (including your future you).
+
+Overview:
+
+```
+# Working Directory      Staging Area          Commit
+# (untracked/modified)   (git add)            (git commit)
+┌─────────────────┐     ┌────────────┐     ┌────────────┐
+│ file1.txt       │────▶│ file1.txt  │────▶│ SNAPSHOT   │
+│ file2.txt       │     │            │     │ of staged  │
+│ file3.txt       │     │            │     │ files      │
+└─────────────────┘     └────────────┘     └────────────┘
+```
+
+How to see commits:
+
+```bash
+# Commit history
+git log                 # Full history
+git log --oneline       # Compact view
+git log --graph         # Visual branch history
+git log -p              # Show changes in each commit
+
+# Specific commits
+git show 04cdef8        # Specific commit
+git show 8ea90d3        # Specific commit
+```
+
+## Navigate between versions
+
+The `git checkout` command enables navigation between different states within a Git repository, allowing developers to switch between branches, restore files from previous commits, or temporarily examine historical versions of the codebase without altering the current working state. This command serves as the primary mechanism for traversing the multidimensional timeline of a project's development history.
+
+
+
+git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+
 git log
 git branch new-branch-name
 git checkout new-branch-name # switch between branches
