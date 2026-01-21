@@ -75,5 +75,33 @@
     "title": "gitgitgithub",
     "section": "Scientific context",
     "text": "Scientific context\n\nSquare one: “Hackaton” https://doi.org/10.1186/s13742-016-0121-x\nR package: https://doi.org/10.32614/CRAN.package.NBR https://doi.org/10.7554/eLife.55081\nAnother academic “hackaton”: https://neurohackademy.org/\n\nGreat overview: https://neurohackademy.org/course/from-interactive-exploration-to-reproducible-data-science-jupyter-binder-travis-and-friends-2/\nNice example with great tips: https://neurohackademy.org/course/tbd-4/"
+  },
+  {
+    "objectID": "begit.html",
+    "href": "begit.html",
+    "title": "Be Git",
+    "section": "",
+    "text": "Main features of Git:\nHow Does Git Work?\nThe git directory serves as the database where the project’s complete history is stored, and GitHub fits for that."
+  },
+  {
+    "objectID": "begit.html#getting-started-with-github",
+    "href": "begit.html#getting-started-with-github",
+    "title": "Be Git",
+    "section": "",
+    "text": "Go to github.com\nSign up for free"
+  },
+  {
+    "objectID": "begit.html#prepare-for-github",
+    "href": "begit.html#prepare-for-github",
+    "title": "Be Git",
+    "section": "3. Prepare for GitHub",
+    "text": "3. Prepare for GitHub\n\nCreate .gitignore file:"
+  },
+  {
+    "objectID": "begit.html#first-of-all-get-git",
+    "href": "begit.html#first-of-all-get-git",
+    "title": "Be Git",
+    "section": "First of all: get Git!",
+    "text": "First of all: get Git!\n\nOS: https://git-scm.com/install/\nInitial config:\n\ngit config --global user.name \"Your name\"\ngit config --global user.email \"your@email\"\nTip: you may use your private GitHub email.\nWait a minute… it’s your first time using Bash… are you panicking?… don’t worry, it’s quite usual… here some tips: https://linuxconfig.org/bash-scripting-tutorial-for-beginners https://www.geeksforgeeks.org/linux-unix/bash-scripting-introduction-to-bash-and-bash-scripting/\nFirst commands: git clone https://github.com/zchuri/ejemplo123.git git log git branch new-branch-name git checkout new-branch-name # switch between branches git checkout main git pull origin main # origin stands for the remote server git merge git push"
   }
 ]

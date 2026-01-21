@@ -12,8 +12,8 @@ website:
         text: Intro
       - href: github.qmd
         text: GitHub
-      - href: tutorial.qmd
-        text: Tutorial
+      - href: begit.qmd
+        text: Be Git
       - href: about.qmd
         text: About
     right:

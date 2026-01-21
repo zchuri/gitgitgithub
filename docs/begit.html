@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Git/GitHub Tutorial – git-git-github!!</title>
+<title>Be Git – git-git-github!!</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -105,8 +140,8 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">GitHub</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./tutorial.html" aria-current="page"> 
-<span class="menu-text">Tutorial</span></a>
+    <a class="nav-link active" href="./begit.html" aria-current="page"> 
+<span class="menu-text">Be Git</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
@@ -135,21 +170,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#getting-started-with-github" id="toc-getting-started-with-github" class="nav-link active" data-scroll-target="#getting-started-with-github">Getting Started with GitHub</a>
-  <ul class="collapse">
-  <li><a href="#create-a-github-account" id="toc-create-a-github-account" class="nav-link" data-scroll-target="#create-a-github-account">1. Create a GitHub Account</a></li>
-  <li><a href="#install-git" id="toc-install-git" class="nav-link" data-scroll-target="#install-git">2. Install Git</a></li>
-  </ul></li>
-  <li><a href="#for-macos" id="toc-for-macos" class="nav-link" data-scroll-target="#for-macos">For macOS</a></li>
-  <li><a href="#for-ubuntudebian" id="toc-for-ubuntudebian" class="nav-link" data-scroll-target="#for-ubuntudebian">For Ubuntu/Debian</a></li>
-  <li><a href="#for-windows" id="toc-for-windows" class="nav-link" data-scroll-target="#for-windows">For Windows</a></li>
-  <li><a href="#download-from-git-scm.com" id="toc-download-from-git-scm.com" class="nav-link" data-scroll-target="#download-from-git-scm.com">Download from git-scm.com</a>
-  <ul class="collapse">
-  <li><a href="#prepare-for-github" id="toc-prepare-for-github" class="nav-link" data-scroll-target="#prepare-for-github">3. <strong>Prepare for GitHub</strong></a>
-  <ul class="collapse">
-  <li><a href="#create-.gitignore-file" id="toc-create-.gitignore-file" class="nav-link" data-scroll-target="#create-.gitignore-file">Create <code>.gitignore</code> file:</a></li>
-  </ul></li>
-  </ul></li>
+  <li><a href="#first-of-all-get-git" id="toc-first-of-all-get-git" class="nav-link active" data-scroll-target="#first-of-all-get-git">First of all: get Git!</a></li>
   </ul>
 </nav>
     </div>
@@ -158,7 +179,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Git/GitHub Tutorial</h1>
+<h1 class="title">Be Git</h1>
 </div>
 
 
@@ -175,40 +196,35 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="getting-started-with-github" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started-with-github">Getting Started with GitHub</h2>
-<section id="create-a-github-account" class="level3">
-<h3 class="anchored" data-anchor-id="create-a-github-account">1. Create a GitHub Account</h3>
+<p>Main features of Git:</p>
 <ul>
-<li>Go to <a href="https://github.com">github.com</a></li>
-<li>Sign up for free</li>
+<li>Track changes (Version Control)</li>
+<li>Branching and merging</li>
+<li>Stashing
+<ul>
+<li>Temporal storing changes while working on a different feature or priority task. You can later retrieve and apply those changes to your current working environment.</li>
+</ul></li>
+<li>Collaboration and teamwork (enhanced through GitHub).</li>
 </ul>
-</section>
-<section id="install-git" class="level3">
-<h3 class="anchored" data-anchor-id="install-git">2. Install Git</h3>
-</section>
-</section>
-<section id="for-macos" class="level1">
-<h1>For macOS</h1>
-<p>brew install git</p>
-</section>
-<section id="for-ubuntudebian" class="level1">
-<h1>For Ubuntu/Debian</h1>
-<p>sudo apt-get install git</p>
-</section>
-<section id="for-windows" class="level1">
-<h1>For Windows</h1>
-</section>
-<section id="download-from-git-scm.com" class="level1">
-<h1>Download from git-scm.com</h1>
-<section id="prepare-for-github" class="level2">
-<h2 class="anchored" data-anchor-id="prepare-for-github">3. <strong>Prepare for GitHub</strong></h2>
-<section id="create-.gitignore-file" class="level3">
-<h3 class="anchored" data-anchor-id="create-.gitignore-file">Create <code>.gitignore</code> file:</h3>
+<p>How Does Git Work?</p>
+<ul>
+<li>“Unlike many version control systems, Git works with snapshots rather than differences. This means that instead of tracking the difference between two versions of a file, Git captures a complete snapshot of the project’s current state.” (Tsitoara, 2024)</li>
+<li>The main feature of Git is its “three states” system, which consists of the working directory (modify), the staging area (add), and the git directory (commit).</li>
+</ul>
+<p>The git directory serves as the database where the project’s complete history is stored, and GitHub fits for that.</p>
+<section id="first-of-all-get-git" class="level2">
+<h2 class="anchored" data-anchor-id="first-of-all-get-git">First of all: get Git!</h2>
+<ul>
+<li>OS: https://git-scm.com/install/</li>
+<li>Initial config:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Your name"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"your@email"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Tip: you may use your private GitHub email.</p>
+<p>Wait a minute… it’s your first time using Bash… are you panicking?… don’t worry, it’s quite usual… here some tips:<br> <a href="https://linuxconfig.org/bash-scripting-tutorial-for-beginners" class="uri">https://linuxconfig.org/bash-scripting-tutorial-for-beginners</a><br> <a href="https://www.geeksforgeeks.org/linux-unix/bash-scripting-introduction-to-bash-and-bash-scripting/" class="uri">https://www.geeksforgeeks.org/linux-unix/bash-scripting-introduction-to-bash-and-bash-scripting/</a></p>
+<p>First commands: git clone https://github.com/zchuri/ejemplo123.git git log git branch new-branch-name git checkout new-branch-name # switch between branches git checkout main git pull origin main # origin stands for the remote server git merge git push</p>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->

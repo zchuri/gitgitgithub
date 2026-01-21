@@ -1,0 +1,46 @@
+---
+title: "Be Git"
+---
+
+Main features of Git:
+
+- Track changes (Version Control)
+- Branching and merging
+- Stashing
+   - Temporal storing changes while working on a
+different feature or priority task. You can later retrieve and apply those
+changes to your current working environment.
+- Collaboration and teamwork (enhanced through GitHub).
+
+How Does Git Work?
+
+- "Unlike many version control systems, Git works with snapshots rather than differences. This means that instead of tracking the difference between two versions of a file, Git captures a complete snapshot of the project’s current state." (Tsitoara, 2024)
+- The main feature of Git is its “three states” system, which consists of the working directory (modify), the staging area (add), and the git directory (commit).
+
+The git directory serves as the database where the project’s complete history is stored, and GitHub fits for that.
+
+## First of all: get Git!
+
+- OS: https://git-scm.com/install/
+- Initial config:
+
+```bash
+git config --global user.name "Your name"
+git config --global user.email "your@email"
+git config --global credential.helper store
+```
+Tip: you may use your GitHub's no-reply email (recommended for privacy).
+
+Wait a minute... it's your first time using Bash... are you panicking?... don't worry, it's quite usual... here some tips:<br>
+<https://linuxconfig.org/bash-scripting-tutorial-for-beginners><br>
+<https://www.geeksforgeeks.org/linux-unix/bash-scripting-introduction-to-bash-and-bash-scripting/>
+
+First commands:
+git clone https://github.com/zchuri/ejemplo123.git
+git log
+git branch new-branch-name
+git checkout new-branch-name # switch between branches
+git checkout main
+git pull origin main # origin stands for the remote server
+git merge
+git push
