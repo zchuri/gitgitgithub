@@ -14,6 +14,8 @@ website:
         text: GitHub
       - href: begit.qmd
         text: Be Git
+      - href: gogit.qmd
+        text: Go Git
       - href: about.qmd
         text: About
     right:
