@@ -25,10 +25,11 @@ The git directory serves as the database where the project’s complete history 
 ``` bash
 git config --global user.name "Your name"
 git config --global user.email "your@email"
-git config --global credential.helper store
 ```
-
+<!--
+git config --global credential.helper store
 Tip: you may use your GitHub's no-reply email (recommended for privacy).
+-->
 
 Wait a minute... it's your first time using Bash... are you panicking?... don't worry, it's quite usual... here some tips:<br> <https://linuxconfig.org/bash-scripting-tutorial-for-beginners><br> <https://www.geeksforgeeks.org/linux-unix/bash-scripting-introduction-to-bash-and-bash-scripting/><br> Super tip: the tabulator is going to became a good friend!
 
@@ -284,7 +285,7 @@ git commit --amend -m "Fix: Correct calculation logic"
 
 -   Undo One or More Commits: `git reset`
 
-``` bash
+```bash
 # Soft reset: undo commit, keep changes STAGED
 git reset --soft HEAD~1
 
@@ -305,7 +306,19 @@ And remember:
 -   Never --amend or reset --hard on pushed commits (unless you're alone on the branch)
 -   Use revert for pushed commits to maintain history
 
+One last thing, let's synchronize these commits to the remote server. In the next section we will go deeper into remote and sychonization procedures.
+
+```bash
+git status
+
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit. (use "git push" to publish your local commits)
+nothing to commit, working tree clean
+
+git push     # Send local commits to remote
+git status
+```
+
 Well done! Yes, maybe too much commands for now, but let's move to the next challenge: work with REMOTE REPOS!!!
 
-<center>
-![](images/gitful.jpg){width="50%"}<br> [Source: https://imgflip.com/i/ai3qx9]{style="font-size: 50%;"}</center>
+<center>![](images/gitful.jpg){width="50%"}<br> [Source: https://imgflip.com/i/ai3qx9]{style="font-size: 50%;"}</center>

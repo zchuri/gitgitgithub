@@ -226,9 +226,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Initial config:</li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Your name"</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"your@email"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> credential.helper store</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Tip: you may use your GitHub’s no-reply email (recommended for privacy).</p>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"your@email"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<!--
+git config --global credential.helper store
+Tip: you may use your GitHub's no-reply email (recommended for privacy).
+-->
 <p>Wait a minute… it’s your first time using Bash… are you panicking?… don’t worry, it’s quite usual… here some tips:<br> <a href="https://linuxconfig.org/bash-scripting-tutorial-for-beginners" class="uri">https://linuxconfig.org/bash-scripting-tutorial-for-beginners</a><br> <a href="https://www.geeksforgeeks.org/linux-unix/bash-scripting-introduction-to-bash-and-bash-scripting/" class="uri">https://www.geeksforgeeks.org/linux-unix/bash-scripting-introduction-to-bash-and-bash-scripting/</a><br> Super tip: the tabulator is going to became a good friend!</p>
 </section>
 <section id="first-commands" class="level2">
@@ -433,6 +435,15 @@ blablabla</code></pre>
 <li>Never –amend or reset –hard on pushed commits (unless you’re alone on the branch)</li>
 <li>Use revert for pushed commits to maintain history</li>
 </ul>
+<p>One last thing, let’s synchronize these commits to the remote server. In the next section we will go deeper into remote and sychonization procedures.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="ex">On</span> branch main</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Your</span> branch is ahead of <span class="st">'origin/main'</span> by 1 commit. <span class="er">(</span><span class="ex">use</span> <span class="st">"git push"</span> to publish your local commits<span class="kw">)</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="ex">nothing</span> to commit, working tree clean</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push     <span class="co"># Send local commits to remote</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status   <span class="co"># Take a look to the GitHub's repo</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Well done! Yes, maybe too much commands for now, but let’s move to the next challenge: work with REMOTE REPOS!!!</p>
 <center>
 <img src="images/gitful.jpg" class="img-fluid" style="width:50.0%"><br> <span style="font-size: 50%;">Source: https://imgflip.com/i/ai3qx9</span>
