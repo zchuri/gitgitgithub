@@ -26,7 +26,12 @@ git status
 git push
 ```
 
-Refresh the GitHub repo and invite someone else to the stage.
+Refresh the GitHub's repo and invite someone else to the stage: Settings -> Collaborators
+
+![](images/invitation.png){width="100%"}<br><br>
+
+
+
 
 ## Issues
 

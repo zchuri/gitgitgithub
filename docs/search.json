@@ -207,7 +207,7 @@
     "href": "undergit.html",
     "title": "Under Git",
     "section": "",
-    "text": "Shall we go private?\nLet’s create a private repo with a inner circle of collaborators.\nIf your credentials or tokens are not stored, git will ask for them.\nRefresh the GitHub repo and invite someone else to the stage."
+    "text": "Shall we go private?\nLet’s create a private repo with a inner circle of collaborators.\nIf your credentials or tokens are not stored, git will ask for them.\nRefresh the GitHub’s repo and invite someone else to the stage: Settings -&gt; Collaborators"
   },
   {
     "objectID": "undergit.html#issues",
