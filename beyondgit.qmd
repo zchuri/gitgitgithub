@@ -62,7 +62,7 @@ git log --oneline
 
 Let's practice a little bit:
 
-```bash
+``` bash
 # Create a branch
 git branch <name>
 
@@ -78,9 +78,9 @@ git merge <name>
 
 # Pushing a Branch to Remote
 git push <remote_name> <branch_name>
-
 ```
 
+```{=html}
 <!--
 # New branch
 git branch alternative
@@ -101,12 +101,13 @@ git push origin alternative
 # Push the merge (the local's current main)
 git push
 -->
+```
 
 ## Pull request
 
 `git pull` is a local Git command that fetches updates from a remote repository and immediately merges them into your current branch, synchronizing your local work with the latest remote changes in a single operation. From a single user point of view, this is also helpful, considering you switch sessions or computers.
 
-```bash
+``` bash
 # Return to the previous repo
 cd ../../ejemplo123/
 git status
@@ -115,31 +116,18 @@ git pull
 ```
 
 <!--
-`git fetch` is a synchronization command that retrieves updates from a remote repository without modifying your local working files or commit history. Suggestion: always fetch before you merge:
-
-```bash
-# The safe workflow
-git fetch                   # 1. See what's out there
-git diff origin/main        # 2. Review changes
-git merge origin/main       # 3. Integrate consciously
-# OR
-git rebase origin/main      # 3. Alternative: clean history
-```
-
-git pull = git fetch + git merge
--->
-
 git branch experimental
-history
 git branch
 git checkout experimental
 touch expfile.txt
-nano expfile.txt 
-cat expfile.txt 
+nano expfile.txt
+cat expfile.txt
+-->
 
+<!--
 ## Common pitfalls
 
-```bash
+``` bash
 # Problem: meant to create feature branch but committed to main
 git add .
 git commit -m "New feature"  # Oops!
@@ -176,9 +164,6 @@ git checkout feature/work-in-progress
 git log --oneline  # Get commit hashes
 git checkout main
 git cherry-pick abc123 def456
+```
 
-``` 
-
-<!--
-git stash is a temporary storage command that saves your uncommitted changes (both staged and unstaged) and reverts your working directory to match the last commit, allowing you to switch contexts without committing incomplete work. Think of it as a "save slot" for your in-progress changes that you can restore later.
 -->

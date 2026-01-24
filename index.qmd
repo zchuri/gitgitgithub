@@ -24,6 +24,5 @@ Mini-survey: <https://forms.gle/VU6QLeoZqefbybKk6>
 
     -   "We can do great things with coding" (Ariel Rokem)
     -   Great overview:<br> <https://neurohackademy.org/course/from-interactive-exploration-to-reproducible-data-science-jupyter-binder-travis-and-friends-2/>
-    -   Nice example with great tips:<br> <https://neurohackademy.org/course/tbd-4/>
 
 ![](images/opensci.png){width="100%"}

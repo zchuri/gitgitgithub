@@ -33,7 +33,7 @@ This is an empty repository:
 
 Let's add a bit of code:<br> <https://r4ds.had.co.nz/><br> <https://github.com/BrainMapINB><br>
 
--   Upload it through the repo's uploader.
+-   Upload it through the repo's uploader. Limits: up to 100 files at once; files < 25Mb.  And don't forguet the licence.
 -   Always follow this basic steps: add -\> commit -\> push
 -   Check the commit.
 

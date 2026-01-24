@@ -178,7 +178,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
   <li><a href="#pull-request" id="toc-pull-request" class="nav-link" data-scroll-target="#pull-request">Pull request</a></li>
-  <li><a href="#common-pitfalls" id="toc-common-pitfalls" class="nav-link" data-scroll-target="#common-pitfalls">Common pitfalls</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -291,61 +290,55 @@ git push
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Pull</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!--
-`git fetch` is a synchronization command that retrieves updates from a remote repository without modifying your local working files or commit history. Suggestion: always fetch before you merge:
+git branch experimental
+git branch
+git checkout experimental
+touch expfile.txt
+nano expfile.txt
+cat expfile.txt
+-->
+<!--
+## Common pitfalls
 
-```bash
-# The safe workflow
-git fetch                   # 1. See what's out there
-git diff origin/main        # 2. Review changes
-git merge origin/main       # 3. Integrate consciously
-# OR
-git rebase origin/main      # 3. Alternative: clean history
+``` bash
+# Problem: meant to create feature branch but committed to main
+git add .
+git commit -m "New feature"  # Oops!
+# Solution: Create new branch with the commit
+git branch feature/new-feature
+# Reset main back
+git checkout main
+git reset --hard HEAD~1  # Delete commit from main
+
+
+# Problem: start working on outdated code, then
+git push origin feature  # REJECTED - behind remote
+# Solution: Always pull first
+git checkout main
+git pull origin main
+git checkout -b feature/new-work
+# If already happened:
+git pull --rebase origin main
+# Resolve conflicts, then push
+
+
+#Problem: Working on main instead of feature branch
+# Made multiple commits on wrong branch
+# Solution
+# 1. Create new branch from current state
+git branch feature/work-in-progress
+
+# 2. Reset main back
+git checkout main
+git reset --hard origin/main  # Back to remote state
+
+# 3. Cherry-pick commits if needed
+git checkout feature/work-in-progress
+git log --oneline  # Get commit hashes
+git checkout main
+git cherry-pick abc123 def456
 ```
 
-git pull = git fetch + git merge
--->
-<p>git branch experimental history git branch git checkout experimental touch expfile.txt nano expfile.txt cat expfile.txt</p>
-</section>
-<section id="common-pitfalls" class="level2">
-<h2 class="anchored" data-anchor-id="common-pitfalls">Common pitfalls</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Problem: meant to create feature branch but committed to main</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"New feature"</span>  <span class="co"># Oops!</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution: Create new branch with the commit</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch feature/new-feature</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Reset main back</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--hard</span> HEAD~1  <span class="co"># Delete commit from main</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Problem: start working on outdated code, then</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin feature  <span class="co"># REJECTED - behind remote</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution: Always pull first</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull origin main</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> feature/new-work</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co"># If already happened:</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull <span class="at">--rebase</span> origin main</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Resolve conflicts, then push</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="co">#Problem: Working on main instead of feature branch</span></span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Made multiple commits on wrong branch</span></span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution</span></span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Create new branch from current state</span></span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch feature/work-in-progress</span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Reset main back</span></span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--hard</span> origin/main  <span class="co"># Back to remote state</span></span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Cherry-pick commits if needed</span></span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout feature/work-in-progress</span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--oneline</span>  <span class="co"># Get commit hashes</span></span>
-<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
-<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> cherry-pick abc123 def456</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<!--
-git stash is a temporary storage command that saves your uncommitted changes (both staged and unstaged) and reverts your working directory to match the last commit, allowing you to switch contexts without committing incomplete work. Think of it as a "save slot" for your in-progress changes that you can restore later.
 -->
 
 

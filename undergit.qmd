@@ -29,12 +29,231 @@ git push
 Refresh the GitHub's repo and invite someone else to the stage: Settings -> Collaborators
 
 ![](images/invitation.png){width="100%"}<br><br>
+Ask your collaborator to add something else (in the main). Then:
+
+```bash
+# git pull <remote> <branch>
+# git pull origin main
+git pull
+```
+
+The `git pull` command is used to fetch and merge changes from a remote repository into your current local branch. Actions: pulls down changes made by others; merges fetched changes into your current branch; just a single command to update and integrate.
+
+Ask your collaborator to do something else... privately, of course. Another option to `git pull` is `git fecth`. 
+
+```bash
+# The safe workflow
+git fetch                   # 1. See what's out there
+git diff origin/main        # 2. Review changes
+git merge origin/main       # 3. Integrate consciously
+# OR
+git rebase origin/main      # 3. Alternative: clean history
+```
+
+`git fetch` is a synchronization command that retrieves updates from a remote repository without modifying your local working files or commit history. If you want to walk more carefully into pulling remote changes, then, it's better to fetch before you merge:
+
+```
+git pull = git fetch + git merge
+```
+
+Well, if you want to walk even more carefully between remote changes, particularly from a collaborator, ask s/he to create a branch, then you may decide to merge it or not.
+
+```bash
+git fetch
+git diff origin/main
+git diff origin/moreprivate main
+git pull
+git merge origin/main
+git merge origin/moreprivate
+git log --oneline
+git push
+```
+
+## Common pitfalls
+
+Our dear collaborator have done some stuff in the main, without letting the master (aka me) know.
+
+```bash
+git status
+nano 'more private.txt'
+git status
+git add .
+git commit -m 'beatiful text added'
+```
+But I am working on the main as usual. Making coding, making adding, making commits... being proud of my progress. I go home, but before let's make a push.
+Let's see...
+
+```bash
+git push
+```
+
+<center>{{< video images/groundhog.mp4 width="400" height="300" >}} [Source: https://i.imgflip.com/4qbbg8.mp4]{style="font-size: 50%;"}</center>
+
+Relax. The error says: 
+"If you want to integrate the remote changes, use hint: 'git pull' before pushing again."
+...among other things
+
+```bash
+git pull
+```
+
+<center>![](images/squirrel.jpg){width="50%"}<br> [Source: https://imgflip.com/i/ai9sbm]{style="font-size: 50%;"}</center>
+
+The problem:
+
+```bash
+REMOTE:   A ← B ← C [origin/main]
+              \
+YOUR LOCAL:    B ← D ← E [main]
+```
+
+Check the problem:
+
+```bash
+git fetch origin
+git status
+# "Your branch and 'origin/main' have diverged"
+
+# See what they added
+git log --oneline HEAD..origin/main
+# See what you added
+git log --oneline origin/main..HEAD
+
+```
+
+Several option:
+
+- Rebase: put your changes after theirs (like adding your paragraph at the end)
+- Merge: combined version (merge commit)
+- Discard: use their version if yours was just a draft.
+
+```bash
+# Rebase
+
+# Step 1: Stash any uncommitted changes
+git stash
+# Step 2: Rebase your commits on top of theirs
+git pull --rebase origin main
+# Step 3: If conflicts occur, resolve them:
+# - Edit conflicted files
+# - Mark resolved: git add filename
+# - Continue rebase: git rebase --continue
+# Step 4: Restore stashed changes
+git stash pop
+# Step 5: Now push
+git push origin main
+
+BEFORE:          AFTER REBASE:
+Remote: A←B←C    Remote: A←B←C←D'←E'
+Local:  A←B←D←E  Local:  A←B←C←D'←E'
+
+```
+
+`git stash` is a temporary storage command that saves your uncommitted changes (both staged and unstaged) and reverts your working directory to match the last commit, allowing you to switch contexts without committing incomplete work. Think of it as a "save slot" for your in-progress changes that you can restore later.
+
+<br>
+
+```bash
+Merge (Preserves Both Histories)
+
+# Step 1: Pull with merge (not rebase)
+git pull origin main
+# Step 2: Resolve any merge conflicts
+# Edit files, then:
+git add resolved-files
+# Step 3: Commit the merge
+git commit -m "Merge remote changes"
+# Step 4: Push
+git push origin main
+
+A←B←C [theirs]
+     \
+      D←E [yours] ← Merge commit ← [new]
+      
+```
+
+<br>
+
+```bash
+# Hard Reset (If You Don't Care About Your Changes)
+
+# WARNING: This discards your local commits!
+git fetch origin
+git reset --hard origin/main
+# Now your local matches remote exactly
+```
+
+<!--
+Create New Branch (If Your Work Isn't Ready)
+
+Use when: You want to keep your work separate.
+bash
+
+# Save your work to a new branch
+git checkout -b my-feature-wip
+
+# Reset main to match remote
+git checkout main
+git fetch origin
+git reset --hard origin/main
+
+# Later, merge your feature branch when ready
+git merge my-feature-wip
+-->
 
 
+<!--
+7. Most Common: The Merge Conflict Resolution
 
+When git pull or git pull --rebase shows conflicts:
+bash
+
+# 1. See conflicted files
+git status
+# Output: "Unmerged paths: file1.txt, file2.js"
+
+# 2. Open each conflicted file
+# You'll see:
+<<<<<<< HEAD
+Your version
+=======
+Their version
+>>>>>>> origin/main
+
+# 3. Edit to create final version, remove markers
+# Example final: "Combined version"
+
+# 4. Mark as resolved
+git add file1.txt file2.js
+
+# 5. Continue the operation
+# If rebasing:
+git rebase --continue
+
+# If merging:
+git commit -m "Resolve merge conflicts"
+-->
+
+There is always other options: create new branches, for example. And prevenetion helps as well:
+
+```bash
+# ALWAYS do this before starting work:
+git checkout main
+git pull origin main
+
+# THEN create feature branch
+git checkout -b feature/your-work
+
+# Work, commit, push your branch
+git push -u origin feature/your-work
+
+# Merge via Pull Request (not directly to main)
+```
 
 ## Issues
 
 Now we are going to focus on GitHub's issues:
 
 Go to GitHub's repo, then "Issues" (next to Code), then "New Issue". Then you may specify any sort of issue, and you can even tag other users with the \@ symbol. In fact, you may directly assign an issue to another user. Labeling the issues is also possible.
+
+-   Nice example with great tips:<br> <https://neurohackademy.org/course/tbd-4/>
