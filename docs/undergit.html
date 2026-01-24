@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About git/github – git-git-github!!</title>
+<title>Under Git – git-git-github!!</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -97,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./intro.html" aria-current="page"> 
+    <a class="nav-link" href="./intro.html"> 
 <span class="menu-text">Intro</span></a>
   </li>  
   <li class="nav-item">
@@ -109,12 +144,12 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Be-Git</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./gogit.html"> 
+    <a class="nav-link" href="./beyondgit.html"> 
 <span class="menu-text">Beyond-Git</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./gogithub.html"> 
-<span class="menu-text">Go-GitHub</span></a>
+    <a class="nav-link active" href="./undergit.html" aria-current="page"> 
+<span class="menu-text">Under-Git</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -139,9 +174,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#version-control" id="toc-version-control" class="nav-link active" data-scroll-target="#version-control">Version control</a></li>
-  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">Git</a></li>
-  <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github">GitHub</a></li>
+  <li><a href="#issues" id="toc-issues" class="nav-link active" data-scroll-target="#issues">Issues</a></li>
   </ul>
 </nav>
     </div>
@@ -150,7 +183,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About git/github</h1>
+<h1 class="title">Under Git</h1>
 </div>
 
 
@@ -167,49 +200,28 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="version-control" class="level1">
-<h1>Version control</h1>
-<p>“Version control is the software engineering practice of controlling, organizing, and tracking different versions in history of computer files – primarily source code text files, but generally any type of file. (…) Version control includes options to view <strong>old versions</strong> and to <strong>revert</strong> a file to a previous version.” (<a href="https://en.wikipedia.org/wiki/Version_control">Wikipedia, 2026 Jan</a>)</p>
-<p>Why this is so important? Because it can solve (or mitigate) several common problems when coding, for instance: overwriting a script or pipeline, needing to go back to a previous version, collaborating with others, tracking who what and when changes.</p>
-<p>After this tutorial you will see that version control is much more effective than:</p>
-<ul>
-<li>Manual copies: document_v1.txt, document_v2_final.txt, document_v2_final_really.txt</li>
-<li>Commenting out code: leaving old code “just in case”</li>
-<li>Physical notebooks</li>
-<li>Shared network drives: the infamous “Final_FINAL.zip”</li>
-</ul>
-<p>Initially version control was addressed as a client-server approach (centralized), however the distributed version control systems are much flexible and it follows a peer-to-peer approach. That is, “the complete codebase, including its full history, is mirrored on every developer’s computer. Compared to centralized version control, this enables automatic management branching and merging, speeds up most operations (except pushing and fetching), improves the ability to work offline, and does not rely on a single location for backups. Git, the world’s most popular version control system, is a distributed version control system.” (<a href="https://en.wikipedia.org/wiki/Distributed_version_control">Wikipedia, 2026 Jan</a>)</p>
-</section>
-<section id="git" class="level1">
-<h1>Git</h1>
-<p><a href="https://en.wikipedia.org/wiki/Git"><img src="images/Git-logo.svg" class="float-left img-fluid" style="width:30.0%"></a></p>
-<p>It was initially developed by Linus Torvalds after the free license for BitKeeper was revoked for Linux. Git aims:</p>
-<ul>
-<li>speed</li>
-<li>data integrity</li>
-<li>non-linear workflows (e.g., parallel branches running on different computers)</li>
-</ul>
-<p>“Git maintains a local copy of the entire repository, also known as the <strong>repo</strong>, with history and version-tracking abilities, independent of network access or a central server. A repository is stored on each computer in a standard directory with additional, hidden files to provide version control capabilities. Git provides features to synchronize changes between repositories that share history; for asynchronous collaboration, this extends to repositories on remote machines. Although all repositories (with the same history) are peers, developers often use a central server to host a repository to hold an integrated copy.” (<a href="https://en.wikipedia.org/wiki/Git">Wikipedia, 2026 Jan</a>)</p>
-</section>
-<section id="github" class="level1">
-<h1>GitHub</h1>
-<p><a href="https://en.wikipedia.org/wiki/GitHub"><img src="images/GitHub_Invertocat_Logo.svg" class="float-left img-fluid" style="width:30.0%"></a></p>
-<p>Git has some limitations to collaborate online. For example: repos’ maintainers receive contributions (patches) mainly through email, merging depends on the maintainers, limited permission management, etc. Github is a software development platform that sits on top of Git, adding new features, such as:</p>
-<ul>
-<li>Fork &amp; Pull Request model: lowered barrier to contribution</li>
-<li>Web-based interface: made Git accessible</li>
-<li>Social features: stars, followers, trending repos</li>
-<li>Issue tracking &amp; Wikis: all-in-one project management</li>
-<li>GitHub Pages: free hosting for documentation/projects</li>
-</ul>
-<p>The impact:</p>
-<ul>
-<li>2008: GitHub launches</li>
-<li>2012: 2.1 million repositories</li>
-<li>2015: 10 million repositories</li>
-<li>2018: Microsoft acquires GitHub for $7.5B</li>
-<li>Today: 100+ million developers, 420+ million repositories</li>
-</ul>
+<p>Shall we go private?</p>
+<center>
+<img src="images/private.jpg" class="img-fluid" style="width:50.0%"><br> <span style="font-size: 50%;">Source: https://imgflip.com/i/hqjmp</span>
+</center>
+<p>Let’s create a private repo with a inner circle of collaborators.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a private repo at GitHub</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Change directory and clone it</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ..</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/zchuri/private123.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If your credentials or tokens are not stored, git will ask for them.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> private123/</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> privatetext.txt</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> privatetext.txt </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add privatetext.txt </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">'Adding some txt file'</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Refresh the GitHub repo and invite someone else to the stage.</p>
+<section id="issues" class="level2">
+<h2 class="anchored" data-anchor-id="issues">Issues</h2>
+<p>Now we are going to focus on GitHub’s issues:</p>
+<p>Go to GitHub’s repo, then “Issues” (next to Code), then “New Issue”. Then you may specify any sort of issue, and you can even tag other users with the @ symbol. In fact, you may directly assign an issue to another user. Labeling the issues is also possible.</p>
 
 
 </section>

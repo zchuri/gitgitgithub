@@ -1,0 +1,35 @@
+---
+title: "Under Git"
+---
+
+Shall we go private?
+
+<center>![](images/private.jpg){width="50%"}<br> [Source: https://imgflip.com/i/hqjmp]{style="font-size: 50%;"}</center>
+
+Let's create a private repo with a inner circle of collaborators.
+
+```bash
+# Create a private repo at GitHub
+# Change directory and clone it
+cd ..
+git clone https://github.com/zchuri/private123.git
+```
+If your credentials or tokens are not stored, git will ask for them.
+
+```bash
+cd private123/
+touch privatetext.txt
+nano privatetext.txt 
+git add privatetext.txt 
+git commit -m 'Adding some txt file'
+git status
+git push
+```
+
+Refresh the GitHub repo and invite someone else to the stage.
+
+## Issues
+
+Now we are going to focus on GitHub's issues:
+
+Go to GitHub's repo, then "Issues" (next to Code), then "New Issue". Then you may specify any sort of issue, and you can even tag other users with the \@ symbol. In fact, you may directly assign an issue to another user. Labeling the issues is also possible.

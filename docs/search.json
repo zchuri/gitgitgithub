@@ -74,7 +74,7 @@
     "href": "index.html#scientific-context",
     "title": "gitgitgithub",
     "section": "Scientific context",
-    "text": "Scientific context\n\nSquare one: “Hackaton” https://doi.org/10.1186/s13742-016-0121-x\nR package: https://doi.org/10.32614/CRAN.package.NBR https://doi.org/10.7554/eLife.55081\nAnother academic “hackaton”: https://neurohackademy.org/\n\nGreat overview: https://neurohackademy.org/course/from-interactive-exploration-to-reproducible-data-science-jupyter-binder-travis-and-friends-2/\nNice example with great tips: https://neurohackademy.org/course/tbd-4/"
+    "text": "Scientific context\n\nSquare one: “Hackaton” https://doi.org/10.1186/s13742-016-0121-x\nR package: https://doi.org/10.32614/CRAN.package.NBR https://doi.org/10.7554/eLife.55081\nAnother academic “hackaton”: https://neurohackademy.org/\n\n“We can do great things with coding” (Ariel Rokem)\nGreat overview: https://neurohackademy.org/course/from-interactive-exploration-to-reproducible-data-science-jupyter-binder-travis-and-friends-2/\nNice example with great tips: https://neurohackademy.org/course/tbd-4/"
   },
   {
     "objectID": "begit.html",
@@ -201,5 +201,47 @@
     "title": "Go-GitHub",
     "section": "",
     "text": "Now we are going to focus on GitHub’s issues:\nGo to GitHub’s repo, then “Issues” (next to Code), then “New Issue”. Then you may specify any sort of issue, and you can even tag other users with the @ symbol. In fact, you may directly assign an issue to another user. Labeling the issues is also possible."
+  },
+  {
+    "objectID": "undergit.html",
+    "href": "undergit.html",
+    "title": "Under Git",
+    "section": "",
+    "text": "Shall we go private?\nLet’s create a private repo with a inner circle of collaborators.\nIf your credentials or tokens are not stored, git will ask for them.\nRefresh the GitHub repo and invite someone else to the stage."
+  },
+  {
+    "objectID": "undergit.html#issues",
+    "href": "undergit.html#issues",
+    "title": "Under Git",
+    "section": "Issues",
+    "text": "Issues\nNow we are going to focus on GitHub’s issues:\nGo to GitHub’s repo, then “Issues” (next to Code), then “New Issue”. Then you may specify any sort of issue, and you can even tag other users with the @ symbol. In fact, you may directly assign an issue to another user. Labeling the issues is also possible."
+  },
+  {
+    "objectID": "beyondgit.html",
+    "href": "beyondgit.html",
+    "title": "Beyond local",
+    "section": "",
+    "text": "Remote repositories are copies of your Git repository stored on servers, enabling collaboration across teams, locations, and time zones. Unlike centralized systems with a single “source of truth,” Git’s distributed nature means every developer has a complete copy of the repository history, with remote servers acting as synchronization points.\nOverview:\nWhile Git excels at local version control, its capabilities are enhanced when connected to remote repositories. Github fits perfectly as a server. GitHub transforms Git’s technical remote capabilities into an intuitive, social platform where developers can seamlessly share code, review changes, and collaborate at scale.\nGitHub is a great tool for open source projects, but also it allows for personal use with private repositories. Private repos are not only personal, they may have collaborators (of course, invited by the master’s). Furthermore, even if you conceive an open source project, you may keep it private initially and eventually you may deploy it public."
+  },
+  {
+    "objectID": "beyondgit.html#practice",
+    "href": "beyondgit.html#practice",
+    "title": "Beyond local",
+    "section": "Practice",
+    "text": "Practice\n“I hear it, I forget; I see it, I remember; I do it, I understand.”\nLet’s practice a little bit:\n# Create a branch\ngit branch &lt;name&gt;\n\n# Switch to Another Branch\ngit branch        # Branchs list\ngit checkout &lt;name&gt;\n\n# Delete a branch\ngit branch -d &lt;name&gt;\n\n# Merge brach\ngit merge &lt;name&gt;\n\n# Pushing a Branch to Remote\ngit push &lt;remote_name&gt; &lt;branch_name&gt;"
+  },
+  {
+    "objectID": "beyondgit.html#pull-request",
+    "href": "beyondgit.html#pull-request",
+    "title": "Beyond local",
+    "section": "Pull request",
+    "text": "Pull request\ngit pull is a local Git command that fetches updates from a remote repository and immediately merges them into your current branch, synchronizing your local work with the latest remote changes in a single operation. From a single user point of view, this is also helpful, considering you switch sessions or computers.\n# Return to the previous repo\ncd ../../ejemplo123/\ngit status\n# Pull\ngit pull\n\ngit branch experimental history git branch git checkout experimental touch expfile.txt nano expfile.txt cat expfile.txt"
+  },
+  {
+    "objectID": "beyondgit.html#common-pitfalls",
+    "href": "beyondgit.html#common-pitfalls",
+    "title": "Beyond local",
+    "section": "Common pitfalls",
+    "text": "Common pitfalls\n# Problem: meant to create feature branch but committed to main\ngit add .\ngit commit -m \"New feature\"  # Oops!\n# Solution: Create new branch with the commit\ngit branch feature/new-feature\n# Reset main back\ngit checkout main\ngit reset --hard HEAD~1  # Delete commit from main\n\n\n# Problem: start working on outdated code, then\ngit push origin feature  # REJECTED - behind remote\n# Solution: Always pull first\ngit checkout main\ngit pull origin main\ngit checkout -b feature/new-work\n# If already happened:\ngit pull --rebase origin main\n# Resolve conflicts, then push\n\n\n#Problem: Working on main instead of feature branch\n# Made multiple commits on wrong branch\n# Solution\n# 1. Create new branch from current state\ngit branch feature/work-in-progress\n\n# 2. Reset main back\ngit checkout main\ngit reset --hard origin/main  # Back to remote state\n\n# 3. Cherry-pick commits if needed\ngit checkout feature/work-in-progress\ngit log --oneline  # Get commit hashes\ngit checkout main\ngit cherry-pick abc123 def456"
   }
 ]

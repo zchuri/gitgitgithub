@@ -26,10 +26,13 @@ The git directory serves as the database where the project’s complete history 
 git config --global user.name "Your name"
 git config --global user.email "your@email"
 ```
+
+```{=html}
 <!--
 git config --global credential.helper store
 Tip: you may use your GitHub's no-reply email (recommended for privacy).
 -->
+```
 
 Wait a minute... it's your first time using Bash... are you panicking?... don't worry, it's quite usual... here some tips:<br> <https://linuxconfig.org/bash-scripting-tutorial-for-beginners><br> <https://www.geeksforgeeks.org/linux-unix/bash-scripting-introduction-to-bash-and-bash-scripting/><br> Super tip: the tabulator is going to became a good friend!
 
@@ -285,7 +288,7 @@ git commit --amend -m "Fix: Correct calculation logic"
 
 -   Undo One or More Commits: `git reset`
 
-```bash
+``` bash
 # Soft reset: undo commit, keep changes STAGED
 git reset --soft HEAD~1
 
@@ -308,7 +311,7 @@ And remember:
 
 One last thing, let's synchronize these commits to the remote server. In the next section we will go deeper into remote and sychonization procedures.
 
-```bash
+``` bash
 git status
 
 On branch main

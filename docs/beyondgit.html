@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About git/github – git-git-github!!</title>
+<title>Beyond local – git-git-github!!</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -97,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./intro.html" aria-current="page"> 
+    <a class="nav-link" href="./intro.html"> 
 <span class="menu-text">Intro</span></a>
   </li>  
   <li class="nav-item">
@@ -109,12 +144,12 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Be-Git</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./gogit.html"> 
+    <a class="nav-link active" href="./beyondgit.html" aria-current="page"> 
 <span class="menu-text">Beyond-Git</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./gogithub.html"> 
-<span class="menu-text">Go-GitHub</span></a>
+    <a class="nav-link" href="./undergit.html"> 
+<span class="menu-text">Under-Git</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -139,9 +174,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#version-control" id="toc-version-control" class="nav-link active" data-scroll-target="#version-control">Version control</a></li>
-  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">Git</a></li>
-  <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github">GitHub</a></li>
+  <li><a href="#remote-basics" id="toc-remote-basics" class="nav-link active" data-scroll-target="#remote-basics">Remote basics</a>
+  <ul class="collapse">
+  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
+  <li><a href="#pull-request" id="toc-pull-request" class="nav-link" data-scroll-target="#pull-request">Pull request</a></li>
+  <li><a href="#common-pitfalls" id="toc-common-pitfalls" class="nav-link" data-scroll-target="#common-pitfalls">Common pitfalls</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -150,7 +188,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About git/github</h1>
+<h1 class="title">Beyond local</h1>
 </div>
 
 
@@ -167,51 +205,151 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="version-control" class="level1">
-<h1>Version control</h1>
-<p>“Version control is the software engineering practice of controlling, organizing, and tracking different versions in history of computer files – primarily source code text files, but generally any type of file. (…) Version control includes options to view <strong>old versions</strong> and to <strong>revert</strong> a file to a previous version.” (<a href="https://en.wikipedia.org/wiki/Version_control">Wikipedia, 2026 Jan</a>)</p>
-<p>Why this is so important? Because it can solve (or mitigate) several common problems when coding, for instance: overwriting a script or pipeline, needing to go back to a previous version, collaborating with others, tracking who what and when changes.</p>
-<p>After this tutorial you will see that version control is much more effective than:</p>
-<ul>
-<li>Manual copies: document_v1.txt, document_v2_final.txt, document_v2_final_really.txt</li>
-<li>Commenting out code: leaving old code “just in case”</li>
-<li>Physical notebooks</li>
-<li>Shared network drives: the infamous “Final_FINAL.zip”</li>
-</ul>
-<p>Initially version control was addressed as a client-server approach (centralized), however the distributed version control systems are much flexible and it follows a peer-to-peer approach. That is, “the complete codebase, including its full history, is mirrored on every developer’s computer. Compared to centralized version control, this enables automatic management branching and merging, speeds up most operations (except pushing and fetching), improves the ability to work offline, and does not rely on a single location for backups. Git, the world’s most popular version control system, is a distributed version control system.” (<a href="https://en.wikipedia.org/wiki/Distributed_version_control">Wikipedia, 2026 Jan</a>)</p>
+<p>Remote repositories are copies of your Git repository stored on <em>servers</em>, enabling collaboration across teams, locations, and time zones. Unlike centralized systems with a single “source of truth,” Git’s distributed nature means every developer has a complete copy of the repository history, with remote servers acting as synchronization points.</p>
+<p>Overview:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add remote repository</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/user/repo.git</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Send local commits to remote</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Get remote changes</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull origin main</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Fetch changes without merging</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch origin</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Clone existing remote repository</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/user/repo.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>While Git excels at local version control, its capabilities are enhanced when connected to remote repositories. Github fits perfectly as a <em>server</em>. GitHub transforms Git’s technical remote capabilities into an intuitive, social platform where developers can seamlessly share code, review changes, and collaborate at scale.</p>
+<p><img src="images/github_activity.png" class="img-fluid" style="width:100.0%"><br><br></p>
+<p>GitHub is a great tool for open source projects, but also it allows for personal use with private repositories. Private repos are not only personal, they may have collaborators (of course, invited by the master’s). Furthermore, even if you conceive an open source project, you may keep it private initially and eventually you may deploy it public.</p>
+<section id="remote-basics" class="level1">
+<h1>Remote basics</h1>
+<p>Let’s review this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Your name"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"your@email"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> credential.helper store</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Tip: you may use your GitHub’s no-reply email (recommended for privacy). And let’s add a classic token to connect to the server.</p>
+<p>Change (<code>cd</code>) or create (<code>mkdir</code>) a new directory, then:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Local copy from the server's directory</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/zchuri/ejemplo123.git</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create new directory</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ..</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> remoteex</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Move into that directory</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ejemplo123/</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Check repo's status and history</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="practice" class="level2">
+<h2 class="anchored" data-anchor-id="practice">Practice</h2>
+<p>“I hear it, I forget; I see it, I remember; I do it, I understand.”</p>
+<p>Let’s practice a little bit:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a branch</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="op">&lt;</span>name<span class="op">&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Switch to Another Branch</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch        <span class="co"># Branchs list</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="op">&lt;</span>name<span class="op">&gt;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Delete a branch</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-d</span> <span class="op">&lt;</span>name<span class="op">&gt;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge brach</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="op">&lt;</span>name<span class="op">&gt;</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Pushing a Branch to Remote</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="op">&lt;</span>remote_name<span class="op">&gt;</span> <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<!--
+# New branch
+git branch alternative
+# Move to that branch
+git checkout alternative
+# Create and edit new file
+touch alternative.txt
+gnome-text-editor alternative.txt
+# Add and commit
+git add alternative.txt
+git commit -m 'new alternative file!'
+git log
+# Return to main and merge
+git checkout main
+git merge alternative
+# Push a branch
+git push origin alternative
+# Push the merge (the local's current main)
+git push
+-->
 </section>
-<section id="git" class="level1">
-<h1>Git</h1>
-<p><a href="https://en.wikipedia.org/wiki/Git"><img src="images/Git-logo.svg" class="float-left img-fluid" style="width:30.0%"></a></p>
-<p>It was initially developed by Linus Torvalds after the free license for BitKeeper was revoked for Linux. Git aims:</p>
-<ul>
-<li>speed</li>
-<li>data integrity</li>
-<li>non-linear workflows (e.g., parallel branches running on different computers)</li>
-</ul>
-<p>“Git maintains a local copy of the entire repository, also known as the <strong>repo</strong>, with history and version-tracking abilities, independent of network access or a central server. A repository is stored on each computer in a standard directory with additional, hidden files to provide version control capabilities. Git provides features to synchronize changes between repositories that share history; for asynchronous collaboration, this extends to repositories on remote machines. Although all repositories (with the same history) are peers, developers often use a central server to host a repository to hold an integrated copy.” (<a href="https://en.wikipedia.org/wiki/Git">Wikipedia, 2026 Jan</a>)</p>
+<section id="pull-request" class="level2">
+<h2 class="anchored" data-anchor-id="pull-request">Pull request</h2>
+<p><code>git pull</code> is a local Git command that fetches updates from a remote repository and immediately merges them into your current branch, synchronizing your local work with the latest remote changes in a single operation. From a single user point of view, this is also helpful, considering you switch sessions or computers.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Return to the previous repo</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ../../ejemplo123/</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Pull</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<!--
+`git fetch` is a synchronization command that retrieves updates from a remote repository without modifying your local working files or commit history. Suggestion: always fetch before you merge:
+
+```bash
+# The safe workflow
+git fetch                   # 1. See what's out there
+git diff origin/main        # 2. Review changes
+git merge origin/main       # 3. Integrate consciously
+# OR
+git rebase origin/main      # 3. Alternative: clean history
+```
+
+git pull = git fetch + git merge
+-->
+<p>git branch experimental history git branch git checkout experimental touch expfile.txt nano expfile.txt cat expfile.txt</p>
 </section>
-<section id="github" class="level1">
-<h1>GitHub</h1>
-<p><a href="https://en.wikipedia.org/wiki/GitHub"><img src="images/GitHub_Invertocat_Logo.svg" class="float-left img-fluid" style="width:30.0%"></a></p>
-<p>Git has some limitations to collaborate online. For example: repos’ maintainers receive contributions (patches) mainly through email, merging depends on the maintainers, limited permission management, etc. Github is a software development platform that sits on top of Git, adding new features, such as:</p>
-<ul>
-<li>Fork &amp; Pull Request model: lowered barrier to contribution</li>
-<li>Web-based interface: made Git accessible</li>
-<li>Social features: stars, followers, trending repos</li>
-<li>Issue tracking &amp; Wikis: all-in-one project management</li>
-<li>GitHub Pages: free hosting for documentation/projects</li>
-</ul>
-<p>The impact:</p>
-<ul>
-<li>2008: GitHub launches</li>
-<li>2012: 2.1 million repositories</li>
-<li>2015: 10 million repositories</li>
-<li>2018: Microsoft acquires GitHub for $7.5B</li>
-<li>Today: 100+ million developers, 420+ million repositories</li>
-</ul>
+<section id="common-pitfalls" class="level2">
+<h2 class="anchored" data-anchor-id="common-pitfalls">Common pitfalls</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Problem: meant to create feature branch but committed to main</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"New feature"</span>  <span class="co"># Oops!</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution: Create new branch with the commit</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch feature/new-feature</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Reset main back</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--hard</span> HEAD~1  <span class="co"># Delete commit from main</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Problem: start working on outdated code, then</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin feature  <span class="co"># REJECTED - behind remote</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution: Always pull first</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull origin main</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> feature/new-work</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co"># If already happened:</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull <span class="at">--rebase</span> origin main</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Resolve conflicts, then push</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="co">#Problem: Working on main instead of feature branch</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Made multiple commits on wrong branch</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Create new branch from current state</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch feature/work-in-progress</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Reset main back</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--hard</span> origin/main  <span class="co"># Back to remote state</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Cherry-pick commits if needed</span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout feature/work-in-progress</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--oneline</span>  <span class="co"># Get commit hashes</span></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> cherry-pick abc123 def456</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<!--
+git stash is a temporary storage command that saves your uncommitted changes (both staged and unstaged) and reverts your working directory to match the last commit, allowing you to switch contexts without committing incomplete work. Think of it as a "save slot" for your in-progress changes that you can restore later.
+-->
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

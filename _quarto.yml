@@ -14,10 +14,10 @@ website:
         text: GitHub
       - href: begit.qmd
         text: Be-Git
-      - href: gogit.qmd
+      - href: beyondgit.qmd
         text: Beyond-Git
-      - href: gogithub.qmd
-        text: Go-GitHub
+      - href: undergit.qmd
+        text: Under-Git
     right:
       - icon: github
         href: https://github.com/zchuri/gitgitgithub
