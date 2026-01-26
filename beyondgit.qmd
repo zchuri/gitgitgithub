@@ -44,13 +44,13 @@ Tip: you may use your GitHub's no-reply email (recommended for privacy). And let
 Change (`cd`) or create (`mkdir`) a new directory, then:
 
 ``` bash
-# Local copy from the server's directory
-git clone https://github.com/zchuri/ejemplo123.git
 # Create new directory
 cd ..
 mkdir remoteex
 # Move into that directory
 cd ejemplo123/
+# Local copy from the server's directory
+git clone https://github.com/zchuri/ejemplo123.git
 # Check repo's status and history
 git status
 git log --oneline
@@ -115,6 +115,7 @@ git status
 git pull
 ```
 
+```{=html}
 <!--
 git branch experimental
 git branch
@@ -123,7 +124,9 @@ touch expfile.txt
 nano expfile.txt
 cat expfile.txt
 -->
+```
 
+````{=html}
 <!--
 ## Common pitfalls
 
@@ -167,3 +170,4 @@ git cherry-pick abc123 def456
 ```
 
 -->
+````

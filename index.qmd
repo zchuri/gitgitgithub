@@ -2,6 +2,13 @@
 title: "gitgitgithub"
 ---
 
+## Biostatnet
+
+Biostatnet Network: <https://biostatnet.com/en>
+
+"Workshop Ciencia Abierta y Software"
+26-27 January 2026
+
 ## Learn GitHub with Quarto
 
 This tutorial will help you master GitHub for data science projects.
@@ -26,3 +33,9 @@ Mini-survey: <https://forms.gle/VU6QLeoZqefbybKk6>
     -   Great overview:<br> <https://neurohackademy.org/course/from-interactive-exploration-to-reproducible-data-science-jupyter-binder-travis-and-friends-2/>
 
 ![](images/opensci.png){width="100%"}
+
+...is the current paradigm changing?
+
+- Executable Research Articles:
+  - <https://apertureneuro.org/>
+  - <https://elifesciences.org/collections/d72819a9/executable-research-articles>

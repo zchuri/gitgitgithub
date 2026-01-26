@@ -6,7 +6,7 @@ Shall we go private?
 
 <center>![](images/private.jpg){width="50%"}<br> [Source: https://imgflip.com/i/hqjmp]{style="font-size: 50%;"}</center>
 
-Let's create a private repo with a inner circle of collaborators.
+Let's create a private repo with an inner circle of collaborators.
 
 ```bash
 # Create a private repo at GitHub
@@ -156,14 +156,20 @@ Local:  A←B←D←E  Local:  A←B←C←D'←E'
 ```bash
 Merge (Preserves Both Histories)
 
-# Step 1: Pull with merge (not rebase)
-git pull origin main
-# Step 2: Resolve any merge conflicts
-# Edit files, then:
-git add resolved-files
-# Step 3: Commit the merge
-git commit -m "Merge remote changes"
-# Step 4: Push
+# Step 1: Fetch remote changes (DO NOT PULL YET)
+git fetch origin
+# Step 2: Merge remote into local (explicit merge)
+git merge origin/main
+# This creates a proper merge commit
+# Step 3: Resolve conflicts if any
+# e.g.: git nano conflicted-files.txt
+# Edit conflicted files...
+# Important: Remove ALL conflict markers
+# (<<<<<<<, =======, >>>>>>>)
+git add resolved-file.txt
+# Step 4: Complete the merge
+git commit -m "Merge remote changes from origin/main"
+# Step 5: Now push
 git push origin main
 
 A←B←C [theirs]
@@ -234,7 +240,7 @@ git rebase --continue
 git commit -m "Resolve merge conflicts"
 -->
 
-There is always other options: create new branches, for example. And prevenetion helps as well:
+There is always other options: create new branches, for example. And prevention helps as well:
 
 ```bash
 # ALWAYS do this before starting work:

@@ -246,7 +246,7 @@ HEAD is now at 9fd5c2b Merge pull request #1 from zchuri/histobranch
 git checkout main
 ```
 
-Warning: check out does not work or any other commit if your working directory isn't clean.
+Warning: `git checkout` (also `git commit`) does not work properly if your working directory is not clean.
 
 `git checkout` alternatives:
 
